@@ -28,24 +28,13 @@ void Render() {
     menu.Start("Cool Menu", options.menuOpen);
     menu.AddTabs(tabs, (int*)&tabIndex);
 
-    int iter = 0;
     switch (tabIndex) {
     case TAB_1:
 
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-
-        menu.AddButton(("Button " + std::to_string(iter++)).c_str(), []() { printf("hi"); });
-
-        menu.AddSlider(("Slider " + std::to_string(iter++)).c_str(), &options.sliderTest, 0, 10);
+        menu.AddCheckbox("Checkbox", &options.checkboxTest);
+        menu.AddButton("Button", []() { printf("hi"); });
+        menu.AddSlider("Slider", &options.sliderTest, 0, 10);
         menu.AddCombo("Aim Point", { "Head", "Chest", "Toes" }, &options.aimPoint);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-        menu.AddCheckbox(("Checkbox " + std::to_string(iter++)).c_str(), &options.checkboxTest);
-
         menu.AddMultiCombo("Multi Point", { "Head", "Chest", "Toes" }, &options.multiPoint);
         menu.AddSlider("Int Slider", &options.sliderIntTest, 0, 10);
 
